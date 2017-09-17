@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: bf890e26bc3820b45a32d44757da2a52
+timeCreated: 1505641409
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - RectanglePrefab: {fileID: 1184340676983704, guid: 1ab42a91139be4146a729aa15347e114,
+      type: 2}
+  - CirclePrefab: {fileID: 1141110048292470, guid: 8c120a4d4ac9fa9419111d0d6c9a9260,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
