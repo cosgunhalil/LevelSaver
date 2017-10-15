@@ -12,12 +12,11 @@ public class SceneBuilder : MonoBehaviour {
 
         foreach (var levelItemData in levelData.LevelItems)
         {
-            GameObject levelItem = _objectGenerator.GenerateLevelItem(levelItemData.Type);
-            var levelItemView = levelItem.GetComponent<LevelItem>();
-
-            levelItemView.transform.localScale = levelItemData.Size;
-            levelItemView.transform.position = levelItemData.Position;
-            levelItemView.transform.eulerAngles = levelItemData.Rotation;
+            var levelItem = _objectGenerator.GenerateLevelItem(levelItemData.Type).GetComponent<LevelItem>();
+            levelItem.Type = levelItemData.Type;
+            levelItem.transform.localScale = levelItemData.Size;
+            levelItem.transform.position = levelItemData.Position;
+            levelItem.transform.eulerAngles = levelItemData.Rotation;
         }
     }
 
