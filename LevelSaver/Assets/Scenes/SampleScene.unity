@@ -77,15 +77,17 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
-    m_PVRFiltering: 0
+    m_PVRFilterTypeDirect: 0
+    m_PVRFilterTypeIndirect: 0
+    m_PVRFilterTypeAO: 0
     m_PVRFilteringMode: 1
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
     m_PVRFilteringGaussRadiusAO: 2
-    m_PVRFilteringAtrousColorSigma: 1
-    m_PVRFilteringAtrousNormalSigma: 1
-    m_PVRFilteringAtrousPositionSigma: 1
+    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
+    m_PVRFilteringAtrousPositionSigmaIndirect: 2
+    m_PVRFilteringAtrousPositionSigmaAO: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -107,6 +109,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    debug:
+      m_Flags: 0
   m_NavMeshData: {fileID: 0}
 --- !u!1 &164336140
 GameObject:
@@ -248,7 +252,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
-  m_StereoMirrorMode: 0
 --- !u!4 &624817242
 Transform:
   m_ObjectHideFlags: 0
@@ -271,6 +274,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1452540776}
   - component: {fileID: 1452540775}
+  - component: {fileID: 1452540777}
+  - component: {fileID: 1452540778}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -289,10 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f2413c46f6648a4c9a2cd54d7c97d3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RectanglePrefab: {fileID: 1184340676983704, guid: 1ab42a91139be4146a729aa15347e114,
-    type: 2}
-  CirclePrefab: {fileID: 1141110048292470, guid: 8c120a4d4ac9fa9419111d0d6c9a9260,
-    type: 2}
+  _sceneBuilder: {fileID: 1452540777}
 --- !u!4 &1452540776
 Transform:
   m_ObjectHideFlags: 0
@@ -306,3 +308,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1452540777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1452540774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9dd5071c8398594e9f22e1531be15b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectGenerator: {fileID: 1452540778}
+--- !u!114 &1452540778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1452540774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9668f3f7767009545bccc06fbcccd7fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RectanglePrefab: {fileID: 1184340676983704, guid: 1ab42a91139be4146a729aa15347e114,
+    type: 2}
+  CirclePrefab: {fileID: 1141110048292470, guid: 8c120a4d4ac9fa9419111d0d6c9a9260,
+    type: 2}
